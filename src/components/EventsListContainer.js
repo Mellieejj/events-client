@@ -3,13 +3,19 @@ import { loadEvents } from "../actions/events";
 import { connect } from "react-redux";
 
 import EventsList from "./EventsList";
+import CreateEventFormContainer from "./CreateEventFormContainer";
 
 class EventsListContainer extends Component {
   componentDidMount() {
     this.props.loadEvents();
   }
   render() {
-    return <EventsList events={this.props.events} />;
+    return (
+      <div>
+        <EventsList events={this.props.events} />
+        <CreateEventFormContainer />
+      </div>
+    );
   }
 }
 
